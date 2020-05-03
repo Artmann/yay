@@ -4,12 +4,12 @@ namespace Compiler.Parsing
 {
     public class CallExpression : IExpression
     {
-        public readonly IExpression function;
+        public readonly NameExpression function;
         public readonly List<IExpression> arguments;
 
         public CallExpression(IExpression function, List<IExpression> arguments)
         {
-            this.function = function;
+            this.function = (NameExpression) function;
             this.arguments = arguments;
         }
     }
